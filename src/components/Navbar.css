@@ -1,0 +1,46 @@
+.main-container {
+    display: flex;
+    font-family: cursive;
+    justify-content: center;
+    align-items: center;
+    height:80px;
+}
+
+.firstUl {
+    display: flex;
+    list-style: none;
+    gap:10px;
+    width: 50%;
+}
+
+.secondUl {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 50%;
+    margin-right: 1%;;
+}
+
+.h {
+    align-self: center;
+    justify-self: center;
+}
+
+
+#icon {
+    width:75px;
+    height: 75px;
+}
+
+.secondUl img {
+    width:40px;
+    height:40px;
+    border-radius: 60px;
+    border: 2px solid #B6E745;
+}
+
+.secondUl img:hover {
+    border: 2px solid #ea3f8e;
+}
