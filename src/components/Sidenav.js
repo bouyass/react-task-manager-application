@@ -7,6 +7,7 @@ function Sidenav(props) {
     useEffect(() => {
         console.log(props.theme)
         document.getElementById('sidenav').style.backgroundColor = props.theme
+        document.getElementById('sidenav').style.backgroundImage = 'linear-gradient(transparent 25%,currentColor 70%)'
     },[props.theme])
 
     return (

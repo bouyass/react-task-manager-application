@@ -1,0 +1,21 @@
+.main-task-container {
+    width: 21%;
+    height: 96%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    gap:10px;
+}
+
+.task-container {
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+.container-title {
+    color: #fff;
+}

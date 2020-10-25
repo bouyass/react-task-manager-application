@@ -1,8 +1,10 @@
 import {combineReducers} from 'redux'
 import NavbarReducer from './NavbarReducer'
+import TaskReducer from './TaskReducer'
 
 export default combineReducers({
-    navbar: NavbarReducer
+    navbar: NavbarReducer,
+    taskState: TaskReducer
 })
 
 
