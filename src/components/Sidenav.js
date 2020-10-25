@@ -45,15 +45,13 @@ function Sidenav(props) {
             setErrorMessage('The task cannot be empty')
             const timer = setTimeout(function(){
                 setErrorMessage('')
-                clearTimeout(timer)
             },3000)
         }else{
             props.addNewTask(contentValue, columns[sliderValue])
             setContentValue('')
-            setSuccessMessage('Task added with todo state')
+            setSuccessMessage('Task added with '+states[sliderValue]+' state')
             const timer1 = setTimeout(()=> {
                 setSuccessMessage('')
-                clearTimeout(timer1)
             },3000)
             
         }
@@ -105,7 +103,7 @@ function Sidenav(props) {
                         <button onClick={() => setAboutusModal(false)} id="aboutusModalBtn"> Close </button>
                     </div>
             </Modal>
-            <Modal visible={addTaskModal} width="800" height="350"  effect="fadeInUp">
+            <Modal visible={addTaskModal} width="600" height="400"  effect="fadeInUp">
                     <div className="modal-main-container">
                         <div className="modal-header"><img src="images/info.png" /><h3> ADD TASK FORM </h3></div>
                         <div className="second-modal-container">
@@ -119,7 +117,7 @@ function Sidenav(props) {
                            <button onClick={() => addTask()} id="addTaskButton"> Add this Task </button>
                         </div> 
                         <span id="error">{errorMessage.length > 0 ? errorMessage : ''}</span>
-                        <span id="success">{successMessage.length > 0 ? successMessage : ''}</span>
+                        <span  id="success">{successMessage.length > 0 ? successMessage : ''}</span>
                     </div>
                     </div>
             </Modal>
