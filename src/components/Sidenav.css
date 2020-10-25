@@ -56,6 +56,123 @@
     align-self: flex-end;
 }
 
+
+#aboutusModalBtn {
+    width: 200px;
+    height: 40px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+#policyModalBtn {
+    width: 200px;
+    height: 40px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.modal-main-container {
+    display: flex;
+    flex-direction: column;   
+    gap: 50px;
+}
+
+.second-modal-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    gap:20px;
+    height: 200px;
+}
+
+.states{
+    display: flex;
+    gap:140px;
+    font-size: 0.8em;
+}
+
+.modal-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap:10px;
+}
+
+
+.modal-header  img {
+    width: 30px;
+    height:30px;
+    align-self: center;
+
+}
+
+#aboutusModalText {
+    margin-top:5%;
+}
+
+#policyModalText{
+    margin-top: 5%;
+}
+
+.modal-header h3 {
+    color:black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.addTaskForm {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+#todoTask{
+    margin-left:1%;
+}
+
+
+#progressTask {
+    margin-left: 6%;
+}
+#performedTask {
+    margin-left: 2%;
+}
+
+#closeAddTaskButton {
+    width: 200px;
+    height: 40px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+#addTaskButton {
+    width: 200px;
+    height: 40px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+#error {
+    color: red;
+}
+
+#success {
+    color: green;
+    
+}
+
+.slide {
+    display: flex;
+    gap:20px;
+}
+
+#textarea {
+    resize: none;
+}
+
 @media screen and (max-width:960px){
     .itemText {
         visibility: hidden;

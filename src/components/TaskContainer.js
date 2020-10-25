@@ -15,18 +15,25 @@ function TaskContainer(props) {
     })
 
     return (
+        <Droppable droppableId={props.data.id}>
+            {(provided) => (
+                <div className="main-task-container" 
+                    ref={provided.innerRef} 
+                    {...provided.droppableProps}
+                >
+                <div className="container-title"><h2 id="title"> {props.title.toUpperCase()} </h2></div>
+                <div className="task-container">
+                    {
+                        props.data.taskIds.map((item,index) => {
+                            return <Task index={index} key={props.tasksData.tasks[item].id} state={props.state} task={props.tasksData.tasks[item]} />
+                        })
 
-        <div className="main-task-container">
-            <div className="container-title"><h2 id="title"> {props.title.toUpperCase()} </h2></div>
-            <div className="task-container">
-                {
-                    props.data.taskIds.map(item => {
-                        return <Task state={props.state} task={props.tasksData.tasks[item]} />
-                    })
-                }
-            </div>
-        </div>
-
+                    }
+                    {provided.placeholder}
+                </div>
+                </div>
+            )}
+        </Droppable>
     )
 }
 
