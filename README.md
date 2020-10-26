@@ -15,3 +15,6 @@ The drag and drop performed using react brautiful dnd
 The users managements feature will be added later
 
 
+## Demo
+
+![Demo](demo.gif)
