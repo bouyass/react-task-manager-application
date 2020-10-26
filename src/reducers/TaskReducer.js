@@ -2,11 +2,11 @@ import data from '../initialData'
 import {CHANGE_TASK_STATE_DRAG,CHANGE_TASK_STATE_MOUSE, CHANGE_TASK_ORDER, CHANGE_TASK_STATE,REMOVE_TASK} from '../actions/types'
 
 
-const initialState = {tasksData: data, nbrTasks:21}
+const initialState = {tasksData: JSON.parse(localStorage.getItem('myTaskStorestate'))['tasksData'], nbrTasks:21}
 export default function(state=initialState,action){
     switch(action.type){
         case CHANGE_TASK_ORDER:
-            return  {...state, tasksData:{ 
+            const newState0 =   {...state, tasksData:{ 
                     ...state.tasksData,
                     columns: {
                         ...state.tasksData.columns,
@@ -14,9 +14,11 @@ export default function(state=initialState,action){
                     }  
                 }  
             }
+            localStorage.setItem('myTaskStorestate', JSON.stringify(newState0))
+        return newState0
         
         case CHANGE_TASK_STATE_DRAG:
-            return  {...state, tasksData:{ 
+            const newState1 =  {...state, tasksData:{ 
                 ...state.tasksData,
                 columns: {
                     ...state.tasksData.columns,
@@ -25,13 +27,15 @@ export default function(state=initialState,action){
                 }  
             }  
         }
+        localStorage.setItem('myTaskStorestate', JSON.stringify(newState1))
+        return newState1
         
         case CHANGE_TASK_STATE_MOUSE:
             const newTasksIds = state.tasksData.columns[action.payload.state].taskIds
             newTasksIds.push('task-'+state.nbrTasks)
             const nbr  = (state.nbrTasks + 1)
             console.log(nbr)
-            return {...state, tasksData:{ 
+            const newState2 = {...state, tasksData:{ 
                 ...state.tasksData,
                 tasks: {
                     ...state.tasksData.tasks,
@@ -47,10 +51,12 @@ export default function(state=initialState,action){
                 }, 
                 nbrTasks: nbr, 
             }
+            localStorage.setItem('myTaskStorestate', JSON.stringify(newState2))
+        return newState2
 
         case REMOVE_TASK:
             const newTasks = state.tasksData.columns[action.payload.firstColumn].taskIds.filter(item => item !== action.payload.task)
-            return {...state, tasksData:{ 
+            const newState3 =  {...state, tasksData:{ 
                 ...state.tasksData,
                 columns: {
                     ...state.tasksData.columns,
@@ -61,6 +67,8 @@ export default function(state=initialState,action){
                 }  
                 }  
             }
+            localStorage.setItem('myTaskStorestate', JSON.stringify(newState3))
+        return newState3
 
         case CHANGE_TASK_STATE: 
 
@@ -68,7 +76,7 @@ export default function(state=initialState,action){
             const secondColumnsTasks = state.tasksData.columns[action.payload.secondColumn].taskIds
             secondColumnsTasks.push(action.payload.task)
 
-            return {...state, tasksData:{ 
+            const newState4 =  {...state, tasksData:{ 
                 ...state.tasksData,
                 columns: {
                     ...state.tasksData.columns,
@@ -83,6 +91,11 @@ export default function(state=initialState,action){
                 }  
                 }  
             }
+
+        localStorage.setItem('myTaskStorestate', JSON.stringify(newState4))
+        return newState4
+
+
 
         default:
             return state
